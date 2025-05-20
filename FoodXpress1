@@ -1,0 +1,19 @@
+from gtts import gTTS
+from pydub import AudioSegment
+from pydub.playback import play
+
+# Define the announcement text in Hindi-English mix
+announcement_text = ("Welcome to Food Xpress... "
+                     "Gaadi kramank ek sau ikkis aapke platform par aa chuki hai... "
+                     "Aaj ke menu mein hai: Chole Rice, Aloo Parathe, Veg Biryani, Chole Kulche... "
+                     "Aur saath mein Lassi, Mango Shake... "
+                     "Dhanyavaad.")
+
+# Generate the speech using Google Text-to-Speech (gTTS)
+tts = gTTS(text=announcement_text, lang='hi')
+
+# Save the generated speech to an MP3 file
+output_path = "/mnt/data/Food_Xpress_Announcement.mp3"
+tts.save(output_path)
+
+output_path
